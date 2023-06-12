@@ -172,7 +172,68 @@ body{
   }
 }
 
-canvas {
-  max-width: 600px;
-  margin: 20px auto;
+.contenedor-portales{
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.portal-1{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.cont-img-portal{
+  display: flex;
+  justify-content: center;
+}
+
+.img-portal{
+  width: 50%;
+  border-style: solid;
+  border-color: rgb(255, 158, 3);
+  border-radius: 10px;
+}
+
+.portal-casilleros {
+
+  /* background-color: aqua; */
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  position: absolute;
+  z-index: 2;
+}
+
+.portal-casilleros input{
+  visibility: hidden;
+  background-color: rgb(32, 81, 172);
+  padding: 5px;
+  margin: 2px;
+  font-size: 20px;
+  color: white;
+  display: inline-block;
+  font-family: 'Montserrat', sans-serif;
+  width: 100px;
+}
+
+.portal-casilleros label{
+  visibility: hidden;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  background: linear-gradient(to right, rgb(249, 216, 5), #ff9900);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: rgb(84, 6, 209);
+  display: inline-block;
+  margin-right: 5px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 22px;
+  width: 30px;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
 }
