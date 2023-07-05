@@ -176,59 +176,84 @@ body{
   }
 }
 
-.contenedor-portales{
+.contenedor-mundo{
+
   display: flex;
   justify-content: space-evenly;
-}
-
-.portal-1{
-  display: flex;
-  align-items: center;
-  justify-content: center;
   position: relative;
 }
 
-.cont-img-portal{
+.mundo{
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
 }
 
 .img-portal{
-  width: 50%;
+  width: 60%;
   border-style: solid;
   border-color: rgb(255, 158, 3);
   border-radius: 10px;
 }
 
-.portal-casilleros {
-  /* background-color: aqua; */
+.mundo-cont-inputs{
   display: flex;
-  justify-content: center;
   flex-direction: column;
   position: absolute;
   z-index: 2;
+  top: 28%;
 }
 
-.portal-casilleros input{
-  visibility: hidden;
-  background-color: rgb(32, 81, 172);
-  padding: 5px;
-  margin: 2px;
-  font-size: 20px;
-  color: white;
-  display: inline-block;
-  font-family: 'Montserrat', sans-serif;
-  width: 100px;
+.mundo-inputs{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
-.portal-casilleros label{
-  visibility: hidden;
+.mundo h3{
+  position: absolute;
+  z-index: 3;
+  top: 30px;
   text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
   background: linear-gradient(to right, rgb(249, 216, 5), #ff9900);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   color: rgb(84, 6, 209);
-  display: inline-block;
+  font-size: 40px;
+}
+
+.coord-copiar{
+  display: flex;
+  flex-direction: column;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  gap: 10px;
+  align-items: center;
+}
+
+.mundo-inputs input{
+  /* visibility: hidden; */
+  background-color: rgba(32, 81, 172, 0.521);
+  padding: 5px;
+  /* margin: 2px; */
+  font-size: 20px;
+  color: white;
+  /* display: inline-block; */
+  font-family: 'Montserrat', sans-serif;
+  width: 150px;
+  border-radius: 10px;
+  border-color: rgb(255, 158, 3);
+}
+
+.mundo-inputs label{
+  /* visibility: hidden; */
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  background: linear-gradient(to right, rgb(249, 216, 5), #ff9900);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: rgb(84, 6, 209);
+  /* display: inline-block; */
   margin-right: 5px;
   font-family: 'Montserrat', sans-serif;
   font-size: 22px;
@@ -241,23 +266,89 @@ input[type=number]::-webkit-outer-spin-button {
   margin: 0; 
 }
 
-@media (max-width: 1032px) {
-  .contenedor-portales{
+.coord-copiar span{
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  background: linear-gradient(to right, rgb(249, 216, 5), #ff9900);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: rgb(84, 6, 209);
+}
+
+.coord-copiar button{
+  border-radius: 10px;
+  padding: 5px;
+  background-color: #00c0fa93;
+  font-size: 20px;
+  color: rgb(255, 255, 255);
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+  border-color: rgb(5, 127, 171);
+  width: 100px;
+
+}
+
+@media (max-width: 1320px) {
+  .contenedor-mundo{
     display: flex;
     flex-direction: column;
     align-items: center;
   }
-
-  .portal-casilleros div{
+  .mundo{
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    position: relative;
   }
-  .portal-casilleros input{
-    width: 20%;
+  .mundo-cont-inputs{
+    position: absolute;
+    z-index: 2;
+    top: 25%;
   }
 
-  .portal-1{
-    margin-top: 10px;
+  .img-portal{
+    width: 40%;
+  }
+
+  .mundo h3{
+    font-size: 150%;
+    position: absolute;
+    top: 30px;
+  }
+
+  .mundo-cont-inputs input{
+    width: 150px;
+  }
+}
+
+@media (max-width: 1000px){
+  .mundo-cont-inputs input{
+    width: 100px;
+  }
+}
+@media (max-width: 770px){
+  .mundo-cont-inputs{
+    position: absolute;
+    z-index: 2;
+    top: 50px;
+
+  }
+
+  .img-portal{
+    width: 40%;
+  }
+
+  .mundo h3{
+    font-size: 20px;
+    position: absolute;
+    top: 10px;
+  }
+
+  .mundo-cont-inputs input{
+    width: 80px;
+  }
+
+  .coord-copiar span{
+    font-size: 15px;
   }
 }
