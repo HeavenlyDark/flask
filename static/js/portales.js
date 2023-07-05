@@ -1,41 +1,52 @@
-var grupoActual = 1;
+// Obtener los elementos del Grupo 1
+var grupo1Casillero1 = document.getElementById("grupo1Casillero1");
+var grupo1Casillero2 = document.getElementById("grupo1Casillero2");
+var grupo1Casillero3 = document.getElementById("grupo1Casillero3");
+var grupo1CasilleroTexto = document.getElementById("grupo1CasilleroTexto");
 
-// Función para calcular los resultados y actualizar los casilleros en el grupo 1
-function calcularCasillerosGrupo1() {
-  var numero1 = parseInt(document.getElementById("casillero1").value);
-  var numero2 = parseInt(document.getElementById("casillero2").value);
-  var numero3 = parseInt(document.getElementById("casillero3").value);
-  
-  var resultado4 = numero1 / 8;
-  var resultado6 = numero3 / 8;
+// Obtener los elementos del Grupo 2
+var grupo2Casillero1 = document.getElementById("grupo2Casillero1");
+var grupo2Casillero2 = document.getElementById("grupo2Casillero2");
+var grupo2Casillero3 = document.getElementById("grupo2Casillero3");
+var grupo2CasilleroTexto = document.getElementById("grupo2CasilleroTexto");
 
-  document.getElementById("casillero4").value = resultado4;
-  document.getElementById("casillero6").value = resultado6;
+// Función para actualizar el Grupo 1
+function actualizarGrupo1() {
+  var valor1 = grupo1Casillero1.value;
+  var valor2 = grupo1Casillero2.value;
+  var valor3 = grupo1Casillero3.value;
+
+  grupo1CasilleroTexto.textContent = valor1 + " " + valor2 + " " + valor3;
+
+  // Actualizar los valores del Grupo 2
+  grupo2Casillero1.value = valor1 / 8;
+  grupo2Casillero2.value = valor2/1;
+  grupo2Casillero3.value = valor3 / 8;
+  actualizarGrupo2();
 }
 
-// Función para calcular los resultados y actualizar los casilleros en el grupo 2
-function calcularCasillerosGrupo2() {
-  var numero4 = parseInt(document.getElementById("casillero4").value);
-  var numero5 = parseInt(document.getElementById("casillero5").value);
-  var numero6 = parseInt(document.getElementById("casillero6").value);
-  
-  var resultado1 = numero4 * 8;
-  var resultado3 = numero6 * 8;
+// Función para actualizar el Grupo 2
+function actualizarGrupo2() {
+  var valor1 = grupo2Casillero1.value;
+  var valor2 = grupo2Casillero2.value;
+  var valor3 = grupo2Casillero3.value;
 
-  document.getElementById("casillero1").value = resultado1;
-  document.getElementById("casillero3").value = resultado3;
+  grupo2CasilleroTexto.textContent = valor1 + " " + valor2 + " " + valor3;
+
+  // Actualizar los valores del Grupo 1
+  grupo1Casillero1.value = valor1 * 8;
+  grupo1Casillero2.value = valor2*1;
+  grupo1Casillero3.value = valor3 * 8;
+  actualizarGrupo1();
 }
 
-// Función para cambiar al grupo 1
-function cambiarGrupo1() {
-  grupoActual = 1;
-  document.getElementById("grupo1").style.display = "block";
-  document.getElementById("grupo2").style.display = "none";
-}
-
-// Función para cambiar al grupo 2
-function cambiarGrupo2() {
-  grupoActual = 2;
-  document.getElementById("grupo1").style.display = "none";
-  document.getElementById("grupo2").style.display = "block";
+// Función para copiar el contenido del elemento identificado por su ID
+function copiarContenido(elementId) {
+  var elemento = document.getElementById(elementId);
+  var range = document.createRange();
+  range.selectNode(elemento);
+  window.getSelection().removeAllRanges();
+  window.getSelection().addRange(range);
+  document.execCommand("copy");
+  window.getSelection().removeAllRanges();
 }
