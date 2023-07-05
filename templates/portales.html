@@ -1,59 +1,63 @@
 {% extends "layout.html" %}
 {% block content %}
 <h1>Vincular Portales</h1>
-<script>
-  window.addEventListener('load', function() {
-    var inputs = document.querySelectorAll('.portal-casilleros input, label');
-    inputs.forEach(function(input) {
-      input.style.visibility = 'visible';
-    });
-  });
-</script>
-<div class="contenedor-portales">
+<div class="contenedor-mundo">
+  <div class="mundo">
 
-  <div class="portal-1">
-    <div class="cont-img-portal">
-      <img class="img-portal" src="{{url_for('static', filename='imagenes/overworld-pedazo.png')}}" alt="Overworld">
+    <img class="img-portal" src="{{url_for('static', filename='imagenes/overworld-pedazo.png')}}" alt="Overworld">
+    <h3>Overworld</h3>
+    <div class="mundo-cont-inputs">
+
+      <div class="mundo-inputs">
+        <div>
+          <label for="grupo1Casillero1">X :</label>
+          <input type="number" id="grupo1Casillero1" oninput="actualizarGrupo1()" />
+        </div>
+        <div>
+          <label for="grupo1Casillero2">Y :</label>
+          <input type="number" id="grupo1Casillero2" oninput="actualizarGrupo1()" />
+        </div>
+        <div>
+          <label for="grupo1Casillero3">Z :</label>
+          <input type="number" id="grupo1Casillero3" oninput="actualizarGrupo1()" />
+        </div>
+      </div>
     </div>
-
-    <div class="portal-casilleros">
-      <div>
-        <label for="casillero1">X :</label>
-        <input type="number" id="casillero1" oninput="calcularCasillerosGrupo1()">
-      </div>
-      <div>
-      <label for="casillero2">Y :</label>
-        <input type="number" id="casillero2" oninput="casillero5.value = this.value; calcularCasillerosGrupo1()">
-      </div>
-      <div>
-        <label for="casillero3">Z :</label>
-        <input type="number" id="casillero3" oninput="calcularCasillerosGrupo1()">
-      </div>
-    </div>   
+    <div class="coord-copiar">
+      <span id="grupo1CasilleroTexto"></span>
+      <button onclick="copiarContenido('grupo1CasilleroTexto')">Copiar</button>
+    </div>
   </div>
-
-  <div class="portal-1">
   
-    <div class="cont-img-portal">
-      <img class="img-portal" src="{{url_for('static', filename='imagenes/nether-pedazo.png')}}" alt="Nether">
-    </div>
+  <div class="mundo">
 
-    <div class="portal-casilleros">
-      <div>  
-        <label for="casillero4">X :</label>
-        <input type="number" id="casillero4" oninput="calcularCasillerosGrupo2()">
+    <img class="img-portal" src="{{url_for('static', filename='imagenes/nether-pedazo.png')}}" alt="Overworld">
+    <h3>Nether</h3>
+    <div class="mundo-cont-inputs">
+      <div class="mundo-inputs">
+        <div>
+          <label for="grupo2Casillero1">X :</label>
+          <input type="number" id="grupo2Casillero1" oninput="actualizarGrupo2()" />
+        </div>
+        <div>
+          <label for="grupo2Casillero2">Y :</label>
+          <input type="number" id="grupo2Casillero2" oninput="actualizarGrupo2()" />
+        </div>
+        <div>
+          <label for="grupo2Casillero3">Z :</label>
+          <input type="number" id="grupo2Casillero3" oninput="actualizarGrupo2()" />
+        </div>
       </div>
-      <div>
-        <label for="casillero5">Y :</label>
-        <input type="number" id="casillero5" oninput="casillero2.value = this.value; calcularCasillerosGrupo2()">
-      </div>
-      <div>
-        <label for="casillero6">Z :</label>
-        <input type="number" id="casillero6" oninput="calcularCasillerosGrupo2()">
-      </div>
+    </div>
+    <div class="coord-copiar">
+      <span id="grupo2CasilleroTexto"></span>
+      <button onclick="copiarContenido('grupo2CasilleroTexto')">Copiar</button>
     </div>
   </div>
+
 </div>
+
+
 <script src="{{url_for('static', filename='js/portales.js')}}"></script>
 
 
